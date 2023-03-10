@@ -2,34 +2,33 @@ name: Deploy Site
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       deployments: write
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: 🏗 Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 18.x
+      - name: 🏗 Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
 
-    - name: 📦 Build Site
-      run: npm ci && npm run build
+      - name: 📦 Build Site
+        run: npm ci && npm run build
 
-    - name: 🚛 Publish Site
-      uses: cloudflare/pages-action@v1.3.0
-      with:
-        apiToken: ${{ secrets.CF_API_TOKEN }}
-        accountId: ${{ secrets.CF_ACCOUNT_ID }}
-        projectName: uk-election
-        directory: ./build
-        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: 🚛 Publish Site
+        uses: cloudflare/pages-action@v1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: uk-election
+          directory: ./build
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

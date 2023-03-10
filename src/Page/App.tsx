@@ -27,7 +27,7 @@ function App() {
 					flexWrap: 'wrap',
 					height: 100,
 					gap: 25,
-					marginTop: 20,
+					marginTop: 10,
 					overflow: 'hidden',
 					textShadow: '0px 0px 10px black',
 				}}>

@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode } from "react";
+import "@fontsource/eb-garamond";
 
 interface Props {
 	children: ReactNode;
@@ -16,6 +17,7 @@ export function Main({ children }: Props) {
 		alignItems: 'center',
 		justifyContent: 'center',
 		fontSize: '2rem',
+		fontFamily: '"EB Garamond", serif',
 		color: 'white',
 	};
 
