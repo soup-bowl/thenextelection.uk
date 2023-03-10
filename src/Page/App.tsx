@@ -16,11 +16,21 @@ function App() {
 
 	return (
 		<Main>
-			<p style={{ margin: 0, fontSize: '0.75em' }}>
+			<p style={{ margin: 0, fontSize: '0.75em', textShadow: '0px 0px 10px black' }}>
 				The next UK General Election is
 			</p>
 			{countdownTime !== undefined &&
-				<div style={{ display: 'flex', flexDirection: 'row', gap: 25, marginTop: 20 }}>
+				<div style={{
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center',
+					flexWrap: 'wrap',
+					height: 100,
+					gap: 25,
+					marginTop: 20,
+					overflow: 'hidden',
+					textShadow: '0px 0px 10px black',
+				}}>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Years</span>
 						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.years}</span>
@@ -32,6 +42,18 @@ function App() {
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Days</span>
 						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.days}</span>
+					</div>
+					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+						<span>Hours</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.hours}</span>
+					</div>
+					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+						<span>Minutes</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.minutes}</span>
+					</div>
+					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+						<span>Seconds</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.seconds}</span>
 					</div>
 				</div>
 			}
