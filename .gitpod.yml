@@ -1,0 +1,19 @@
+tasks:
+  - name: Frontend
+    init: |
+      nvm install 18
+      npm install
+    command: |
+      echo "PUBLIC_URL=$(gp url 3000)" > .env.development.local
+      cp .env.development.local .env.production.local
+      nvm use 18
+      npm start
+    openMode: split-right
+
+ports:
+  - port: 3000
+    name: Frontend
+    description: Access the React PWA app.
+    visibility: public
+    onOpen: open-browser
+

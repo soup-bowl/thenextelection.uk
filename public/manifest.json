@@ -1,0 +1,8 @@
+{
+	"short_name": "nextukge",
+	"name": "Next Election UK",
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#363636",
+	"background_color": "#363636"
+}
