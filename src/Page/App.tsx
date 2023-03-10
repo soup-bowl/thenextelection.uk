@@ -33,27 +33,39 @@ function App() {
 				}}>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Years</span>
-						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.years}</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+							{countdownTime.years.toString().padStart(2, '0')}
+						</span>
 					</div>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Months</span>
-						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.months}</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+							{countdownTime.months.toString().padStart(2, '0')}
+						</span>
 					</div>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Days</span>
-						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.days}</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+							{countdownTime.days.toString().padStart(2, '0')}
+						</span>
 					</div>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Hours</span>
-						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.hours}</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+							{countdownTime.hours.toString().padStart(2, '0')}
+						</span>
 					</div>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Minutes</span>
-						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.minutes}</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+							{countdownTime.minutes.toString().padStart(2, '0')}
+						</span>
 					</div>
 					<div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
 						<span>Seconds</span>
-						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{countdownTime.seconds}</span>
+						<span style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+							{countdownTime.seconds.toString().padStart(2, '0')}
+						</span>
 					</div>
 				</div>
 			}
