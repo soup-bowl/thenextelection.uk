@@ -5,7 +5,7 @@ interface Props {
 	children: ReactNode;
 }
 
-export function Main({ children }: Props) {
+const Main = ({ children }: Props) => {
 	const header: CSSProperties = {
 		backgroundImage: `url(${process.env.PUBLIC_URL + "/background.svg"})`,
 		backgroundPosition: 'center',
@@ -29,3 +29,5 @@ export function Main({ children }: Props) {
 		</div>
 	);
 }
+
+export default Main;
