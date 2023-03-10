@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
-import Countdown from "../Components/Countdown";
-import Main from "../Components/MainStyle";
-import { calculateCountdown, ITimeCalculation } from "../Functions/TimeCalculation";
+import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
+import Countdown from './components/Countdown';
+import Main from './components/MainStyle';
+import { calculateCountdown, ITimeCalculation } from './functions/TimeCalculation';
 
 const App = () => {
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
 
 	useEffect(() => {
-		const election: Date = new Date(process.env.REACT_APP_ELECTION_DATE ?? '');
+		const election: Date = new Date('2025-01-24');
 
 		setCountdownTime(calculateCountdown(election));
 		setInterval(() => {

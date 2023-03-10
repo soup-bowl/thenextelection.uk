@@ -1,13 +1,14 @@
-import { CSSProperties, ReactNode } from "react";
+import { h } from "preact";
 import "@fontsource/eb-garamond";
+import { CSSProperties } from "preact/compat";
 
 interface Props {
-	children: ReactNode;
+	children: any;
 }
 
 const Main = ({ children }: Props) => {
 	const header: CSSProperties = {
-		backgroundImage: `url(${process.env.PUBLIC_URL + "/background.svg"})`,
+		backgroundImage: 'url(/assets/background.svg)',
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
 		backgroundColor: '#363636',

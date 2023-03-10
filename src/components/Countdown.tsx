@@ -1,5 +1,6 @@
-import { CSSProperties } from "react";
-import { ITimeCalculation } from "../Functions/TimeCalculation";
+import { h } from "preact";
+import { CSSProperties } from "preact/compat";
+import { ITimeCalculation } from "src/functions/TimeCalculation";
 
 interface Props {
 	counter: ITimeCalculation;
