@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { CSSProperties } from "react";
 import { ITimeCalculation } from "../Functions/TimeCalculation";
 
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const Countdown = ({ counter }: Props) => {
-	const boxStyling: CSSProperties = {
+	const CountdownBox = styled.div({
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'center',
@@ -16,57 +17,45 @@ const Countdown = ({ counter }: Props) => {
 		marginTop: 10,
 		overflow: 'hidden',
 		textShadow: '0px 0px 10px black',
-	};
+	});
 
-	const segmentStyling: CSSProperties = {
+	const Counter = styled.div({
 		display: 'flex',
 		flexDirection: 'column-reverse',
-	};
+	});
 
-	const timeStyling: CSSProperties = {
+	const Digit = styled.span({
 		fontSize: '1.5em',
 		fontWeight: 'bold',
-	};
+	});
 
 	return (
-		<div style={boxStyling}>
-			<div style={segmentStyling}>
+		<CountdownBox>
+			<Counter>
 				<span>Years</span>
-				<span style={timeStyling}>
-					{counter.years.toString().padStart(2, '0')}
-				</span>
-			</div>
-			<div style={segmentStyling}>
+				<Digit>{counter.years.toString().padStart(2, '0')}</Digit>
+			</Counter>
+			<Counter>
 				<span>Months</span>
-				<span style={timeStyling}>
-					{counter.months.toString().padStart(2, '0')}
-				</span>
-			</div>
-			<div style={segmentStyling}>
+				<Digit>{counter.months.toString().padStart(2, '0')}</Digit>
+			</Counter>
+			<Counter>
 				<span>Days</span>
-				<span style={timeStyling}>
-					{counter.days.toString().padStart(2, '0')}
-				</span>
-			</div>
-			<div style={segmentStyling}>
+				<Digit>{counter.days.toString().padStart(2, '0')}</Digit>
+			</Counter>
+			<Counter>
 				<span>Hours</span>
-				<span style={timeStyling}>
-					{counter.hours.toString().padStart(2, '0')}
-				</span>
-			</div>
-			<div style={segmentStyling}>
+				<Digit>{counter.hours.toString().padStart(2, '0')}</Digit>
+			</Counter>
+			<Counter>
 				<span>Minutes</span>
-				<span style={timeStyling}>
-					{counter.minutes.toString().padStart(2, '0')}
-				</span>
-			</div>
-			<div style={segmentStyling}>
+				<Digit>{counter.minutes.toString().padStart(2, '0')}</Digit>
+			</Counter>
+			<Counter>
 				<span>Seconds</span>
-				<span style={timeStyling}>
-					{counter.seconds.toString().padStart(2, '0')}
-				</span>
-			</div>
-		</div>
+				<Digit>{counter.seconds.toString().padStart(2, '0')}</Digit>
+			</Counter>
+		</CountdownBox>
 	);
 }
 

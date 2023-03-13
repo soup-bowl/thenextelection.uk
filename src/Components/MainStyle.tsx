@@ -1,12 +1,13 @@
 import { CSSProperties, ReactNode } from "react";
 import "@fontsource/eb-garamond";
+import styled from "@emotion/styled";
 
 interface Props {
 	children: ReactNode;
 }
 
 const Main = ({ children }: Props) => {
-	const header: CSSProperties = {
+	const Header = styled.header({
 		backgroundImage: `url(${process.env.PUBLIC_URL + "/background.svg"})`,
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
@@ -19,13 +20,13 @@ const Main = ({ children }: Props) => {
 		fontSize: '2rem',
 		fontFamily: '"EB Garamond", serif',
 		color: 'white',
-	};
+	});
 
 	return (
 		<div style={{ textAlign: 'center' }}>
-			<header style={header}>
+			<Header>
 				{children}
-			</header>
+			</Header>
 		</div>
 	);
 }
