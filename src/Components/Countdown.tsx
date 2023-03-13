@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { CSSProperties } from "react";
 import { ITimeCalculation } from "../Functions/TimeCalculation";
 
 interface Props {
