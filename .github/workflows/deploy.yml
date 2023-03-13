@@ -3,6 +3,10 @@ name: Deploy Site
 on:
   push:
     branches: ["main"]
+    paths:
+      - "src/**"
+      - "package-lock.json"
+      - "tsconfig.json"
   workflow_dispatch:
 
 jobs:

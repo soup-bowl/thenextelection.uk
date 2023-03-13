@@ -10,7 +10,7 @@ const Main = ({ children }: Props) => {
 		backgroundImage: `url(${process.env.PUBLIC_URL + "/background.svg"})`,
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
-		backgroundColor: '#363636',
+		backgroundColor: '#070037',
 		minHeight: '100vh',
 		display: 'flex',
 		flexDirection: 'column',
