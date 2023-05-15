@@ -33,11 +33,25 @@ const App = () => {
 		}
 	});
 
+	const Me = styled.a({
+		color: 'white',
+		position: 'absolute',
+		bottom: 0,
+		margin: 5,
+		fontSize: '0.75em',
+		textShadow: '0px 0px 10px black',
+		textDecoration: 'none',
+		':hover': {
+			textDecoration: 'underline'
+		}
+	});
+
 	return (
 		<Main>
 			<Info>The next UK General Election is</Info>
 			{countdownTime !== undefined && <Countdown counter={countdownTime} />}
 			<Link style={{ marginTop: 2 }} href="https://www.gov.uk/how-to-vote" target="_blank">How to vote?</Link>
+			<Me href="https://github.com/soup-bowl/thenextelection.uk" target="_blank">source</Me>
 		</Main>
 	);
 }
