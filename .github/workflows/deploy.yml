@@ -34,5 +34,5 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           projectName: uk-election
-          directory: ./build
+          directory: ./dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

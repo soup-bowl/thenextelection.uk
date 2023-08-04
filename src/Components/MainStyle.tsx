@@ -8,7 +8,7 @@ interface Props {
 
 const Main = ({ children }: Props) => {
 	const Header = styled.header({
-		backgroundImage: `url(${process.env.PUBLIC_URL + "/background.svg"})`,
+		backgroundImage: 'url("./background.svg")',
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
 		backgroundColor: '#070037',

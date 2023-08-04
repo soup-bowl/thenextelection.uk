@@ -10,7 +10,7 @@ const App = () => {
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
 
 	useEffect(() => {
-		const election: Date = new Date(process.env.REACT_APP_ELECTION_DATE ?? '');
+		const election: Date = new Date(import.meta.env.VITE_ELECTION_DATE ?? '');
 
 		setCountdownTime(calculateCountdown(election));
 		setInterval(() => {
