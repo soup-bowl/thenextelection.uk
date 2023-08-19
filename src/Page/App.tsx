@@ -4,19 +4,45 @@ import Main from "../Components/MainStyle";
 import { calculateCountdown, ITimeCalculation } from "../Functions/TimeCalculation";
 import styled from "@emotion/styled";
 import { Modal } from "../Components/Modal";
+import { IElectionData } from "../interface";
 
 const App = () => {
 	const [dialog, setDialogState] = useState<boolean>(false);
-	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
+	const [countdownTime, setCountdownTime] = useState<Date | undefined>(undefined);
 
 	useEffect(() => {
-		const election: Date = new Date(import.meta.env.VITE_ELECTION_DATE ?? '');
+		const fetchData = async () => {
+			try {
+				const response = await fetch(import.meta.env.VITE_ELECTION_DATA ?? '');
 
-		setCountdownTime(calculateCountdown(election));
-		setInterval(() => {
-			setCountdownTime(calculateCountdown(election));
-		}, 1000);
+				if (!response.ok) {
+					throw new Error("Network response was not ok.");
+				}
+
+				const jsonData: IElectionData = await response.json();
+				setCountdownTime(new Date(jsonData.next));
+			} catch (error) {
+				console.error("Error fetching JSON data:", error);
+			}
+		};
+
+		fetchData();
 	}, []);
+
+	useEffect(() => {
+		const updateCountdown = () => {
+			if (countdownTime) {
+				const newTime = new Date(countdownTime);
+				newTime.setSeconds(newTime.getSeconds() - 1);
+				setCountdownTime(newTime);
+				console.log(newTime, calculateCountdown(newTime));
+			}
+		};
+
+		const countdownInterval = setInterval(updateCountdown, 1000);
+
+		return () => clearInterval(countdownInterval);
+	}, [countdownTime]);
 
 	const Info = styled.p({
 		margin: 0,
@@ -39,7 +65,7 @@ const App = () => {
 	return (
 		<Main>
 			<Info>The next UK General Election is</Info>
-			{countdownTime !== undefined && <Countdown counter={countdownTime} />}
+			{countdownTime !== undefined && <Countdown date={countdownTime} />}
 			<Link style={{ marginTop: 2 }} onClick={() => setDialogState(true)}>More info</Link>
 			<Modal open={dialog} onClose={() => setDialogState(false)}>
 				<h2>About the Site</h2>

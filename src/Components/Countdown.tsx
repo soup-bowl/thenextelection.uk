@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
-import { ITimeCalculation } from "../Functions/TimeCalculation";
+import { calculateCountdown } from "../Functions/TimeCalculation";
 
 interface Props {
-	counter: ITimeCalculation;
+	date: Date;
 }
 
-const Countdown = ({ counter }: Props) => {
+const Countdown = ({ date }: Props) => {
+	const counter = calculateCountdown(date);
+
 	const CountdownBox = styled.div({
 		display: 'flex',
 		flexDirection: 'row',
