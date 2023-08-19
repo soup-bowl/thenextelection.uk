@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { ReactNode, useEffect } from "react";
+import "@fontsource/inter";
 
 const ModalControl = styled.div({
 	position: "fixed",
@@ -13,7 +14,7 @@ const ModalBackdrop = styled.div({
 	alignItems: "center",
 	justifyContent: "center",
 	inset: "0px",
-	backgroundColor: "rgba(0, 0, 0, 0.75)",
+	backdropFilter: "blur(50px)",
 	zIndex: -1
 });
 
@@ -26,7 +27,8 @@ const ModalBackground = styled.div({
 });
 
 const ModalBox = styled.div({
-	backgroundColor: "#1B1A1B",
+	backgroundColor: "#FFF",
+	fontFamily: 'Inter, sans-serif',
 	margin: "32px",
 	position: "relative",
 	overflowY: "auto",
@@ -40,7 +42,10 @@ const ModalBox = styled.div({
 		`rgb(0 0 0 / 20%) 0px 11px 15px -7px,
 		rgb(0 0 0 / 14%) 0px 24px 38px 3px,
 		rgb(0 0 0 / 12%) 0px 9px 46px 8px`
-	]
+	],
+	borderTopStyle: "solid",
+	borderTopWidth: 20,
+	borderTopColor: "black",
 });
 
 const ModalBody = styled.div({
@@ -50,8 +55,17 @@ const ModalBody = styled.div({
 	fontSize: "1.25rem",
 	fontFamily: "sans-serif",
 	textAlign: "left",
+	color: '#0B0C0C',
+	borderTopStyle: "solid",
+	borderTopWidth: 5,
+	borderTopColor: "#1D70B8",
 	"a": {
-		color: "white"
+		color: "#1D70B8",
+		textDecorationThickness: "max(1px, 0.0625rem)",
+	},
+	"a:hover": {
+		color: "#003078",
+		textDecorationThickness: "max(3px, 0.1875rem, 0.12em)",
 	}
 });
 

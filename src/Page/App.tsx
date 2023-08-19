@@ -36,6 +36,11 @@ const App = () => {
 		}
 	});
 
+	const Footnote = styled.p({
+		color: '#818181',
+		textAlign: 'center',
+	});
+
 	return (
 		<Main>
 			<Info>The next UK General Election is</Info>
@@ -61,6 +66,7 @@ const App = () => {
 					You can find information about your local council votes and how to register to vote on the UK
 					Government <a href="https://www.gov.uk/how-to-vote">Register to Vote</a> page.
 				</p>
+				<Footnote>This website is not affiliated with the UK Government or any Political Party.</Footnote>
 			</Modal>
 		</Main>
 	);
