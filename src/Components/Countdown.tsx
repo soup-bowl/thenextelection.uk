@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 import { ITimeCalculation } from "../Functions/TimeCalculation";
 
 interface Props {
-	counter: ITimeCalculation;
+	counter?: ITimeCalculation;
 }
 
-const Countdown = ({ counter }: Props) => {
+const Countdown = ({ counter = undefined }: Props) => {
 	const CountdownBox = styled.div({
 		display: 'flex',
 		flexDirection: 'row',
@@ -27,6 +27,14 @@ const Countdown = ({ counter }: Props) => {
 		fontSize: '1.5em',
 		fontWeight: 'bold',
 	});
+
+	if (counter === undefined) {
+		return (
+			<div style={{ textAlign: 'center' }}>
+				<p>Loading...</p>
+			</div>
+		);
+	}
 
 	return (
 		<CountdownBox>

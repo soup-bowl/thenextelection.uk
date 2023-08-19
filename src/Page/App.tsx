@@ -1,22 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Countdown from "../Components/Countdown";
 import Main from "../Components/MainStyle";
 import { calculateCountdown, ITimeCalculation } from "../Functions/TimeCalculation";
 import styled from "@emotion/styled";
 import { Modal } from "../Components/Modal";
+import useInterval from "../Functions/useInterval";
 
 const App = () => {
 	const [dialog, setDialogState] = useState<boolean>(false);
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
 
-	useEffect(() => {
-		const election: Date = new Date(import.meta.env.VITE_ELECTION_DATE ?? '');
-
-		setCountdownTime(calculateCountdown(election));
-		setInterval(() => {
-			setCountdownTime(calculateCountdown(election));
-		}, 1000);
-	}, []);
+	useInterval(() => {
+		setCountdownTime(calculateCountdown(
+			new Date(import.meta.env.VITE_ELECTION_DATE ?? '')
+		));
+	}, 1000);
 
 	const Info = styled.p({
 		margin: 0,
@@ -44,7 +42,7 @@ const App = () => {
 	return (
 		<Main>
 			<Info>The next UK General Election is</Info>
-			{countdownTime !== undefined && <Countdown counter={countdownTime} />}
+			<Countdown counter={countdownTime} />
 			<Link style={{ marginTop: 2 }} onClick={() => setDialogState(true)}>More info</Link>
 			<Modal open={dialog} onClose={() => setDialogState(false)}>
 				<h2>About the Site</h2>
