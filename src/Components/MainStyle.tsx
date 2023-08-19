@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import "@fontsource/eb-garamond";
 import styled from "@emotion/styled";
+import { Party, PartyColour } from "../Functions/PartyColour";
 
 interface Props {
 	children: ReactNode;
@@ -11,7 +12,7 @@ const Main = ({ children }: Props) => {
 		backgroundImage: 'url("./background.svg")',
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
-		backgroundColor: '#070037',
+		backgroundColor: PartyColour(Party.Conservative),
 		minHeight: '100vh',
 		display: 'flex',
 		flexDirection: 'column',
