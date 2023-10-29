@@ -11,9 +11,11 @@ const App = () => {
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
 
 	useInterval(() => {
-		setCountdownTime(calculateCountdown(
-			new Date(import.meta.env.VITE_ELECTION_DATE ?? '')
-		));
+		if (!dialog) {
+			setCountdownTime(
+				calculateCountdown(new Date(import.meta.env.VITE_ELECTION_DATE ?? ''))
+			);
+		}
 	}, 1000);
 
 	const Info = styled.p({
