@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "preact/hooks";
 import Countdown from "../Components/Countdown";
 import Main from "../Components/MainStyle";
 import { calculateCountdown, ITimeCalculation } from "../Functions/TimeCalculation";

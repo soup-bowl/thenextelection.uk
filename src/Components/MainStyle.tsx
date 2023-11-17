@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from "preact/compat";
 import "@fontsource/eb-garamond";
 import { Party, PartyColour } from "../Functions/PartyColour";
 

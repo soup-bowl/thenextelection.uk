@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from "preact/compat";
 import "@fontsource/inter";
 
 interface ModalProps {

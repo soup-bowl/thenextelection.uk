@@ -1,15 +1,5 @@
-import { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
+import { render } from 'preact'
 import './index.css';
 import App from './Page/App';
 
-const root = ReactDOM.createRoot(
-	document.getElementById('root') as HTMLElement
-);
-
-root.render(
-	<StrictMode>
-		<App />
-	</StrictMode>
-);
-
+render(<App />, document.getElementById('root')!)

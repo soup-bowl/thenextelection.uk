@@ -5,26 +5,19 @@
   "dependencies": {
     "@fontsource/eb-garamond": "^4.5.11",
     "@fontsource/inter": "^5.0.8",
-    "@types/node": "^17.0.45",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "@vitejs/plugin-react-swc": "^3.3.2",
-    "eslint": "^8.46.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^4.9.5",
+    "preact": "^10.19.1",
     "vite": "^4.4.8",
     "vite-plugin-pwa": "^0.16.4"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.6.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
   },
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   }
 }
