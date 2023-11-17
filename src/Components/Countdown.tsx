@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { ITimeCalculation } from "../Functions/TimeCalculation";
 
 interface Props {
@@ -6,28 +5,6 @@ interface Props {
 }
 
 const Countdown = ({ counter = undefined }: Props) => {
-	const CountdownBox = styled.div({
-		display: 'flex',
-		flexDirection: 'row',
-		justifyContent: 'center',
-		flexWrap: 'wrap',
-		height: 100,
-		gap: 25,
-		marginTop: 10,
-		overflow: 'hidden',
-		textShadow: '0px 0px 10px black',
-	});
-
-	const Counter = styled.div({
-		display: 'flex',
-		flexDirection: 'column-reverse',
-	});
-
-	const Digit = styled.span({
-		fontSize: '1.5em',
-		fontWeight: 'bold',
-	});
-
 	if (counter === undefined) {
 		return (
 			<div style={{ textAlign: 'center' }}>
@@ -37,32 +14,32 @@ const Countdown = ({ counter = undefined }: Props) => {
 	}
 
 	return (
-		<CountdownBox>
-			<Counter>
+		<div className="countdown-box">
+			<div className="counter">
 				<span>Years</span>
-				<Digit>{counter.years.toString().padStart(2, '0')}</Digit>
-			</Counter>
-			<Counter>
+				<span className="digit">{counter.years.toString().padStart(2, '0')}</span>
+			</div>
+			<div className="counter">
 				<span>Months</span>
-				<Digit>{counter.months.toString().padStart(2, '0')}</Digit>
-			</Counter>
-			<Counter>
+				<span className="digit">{counter.months.toString().padStart(2, '0')}</span>
+			</div>
+			<div className="counter">
 				<span>Days</span>
-				<Digit>{counter.days.toString().padStart(2, '0')}</Digit>
-			</Counter>
-			<Counter>
+				<span className="digit">{counter.days.toString().padStart(2, '0')}</span>
+			</div>
+			<div className="counter">
 				<span>Hours</span>
-				<Digit>{counter.hours.toString().padStart(2, '0')}</Digit>
-			</Counter>
-			<Counter>
+				<span className="digit">{counter.hours.toString().padStart(2, '0')}</span>
+			</div>
+			<div className="counter">
 				<span>Minutes</span>
-				<Digit>{counter.minutes.toString().padStart(2, '0')}</Digit>
-			</Counter>
-			<Counter>
+				<span className="digit">{counter.minutes.toString().padStart(2, '0')}</span>
+			</div>
+			<div className="counter">
 				<span>Seconds</span>
-				<Digit>{counter.seconds.toString().padStart(2, '0')}</Digit>
-			</Counter>
-		</CountdownBox>
+				<span className="digit">{counter.seconds.toString().padStart(2, '0')}</span>
+			</div>
+		</div>
 	);
 }
 

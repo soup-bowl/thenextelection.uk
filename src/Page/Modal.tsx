@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { Modal } from "../Components/Modal";
 
 interface Props {
@@ -6,17 +5,12 @@ interface Props {
 	onClose: () => void;
 }
 
-const Footnote = styled.p({
-	color: '#818181',
-	textAlign: 'center',
-});
-
 export const InfoModal = ({ open, onClose }: Props) => {
 	const date = new Date(import.meta.env.VITE_ELECTION_DATE ?? '');
 	const reason = Number(import.meta.env.VITE_ELECTION_REASON ?? '0');
 
 	const electionReason = () => {
-		switch(reason) {
+		switch (reason) {
 			default:
 			case 0:
 				return "unknown";
@@ -53,7 +47,10 @@ export const InfoModal = ({ open, onClose }: Props) => {
 				You can find information about your local council votes and how to register to vote on the UK
 				Government <a href="https://www.gov.uk/how-to-vote">Register to Vote</a> page.
 			</p>
-			<Footnote>This website is not affiliated with the UK Government or any Political Party.</Footnote>
+			<p style={{
+				color: '#818181',
+				textAlign: 'center',
+			}}>This website is not affiliated with the UK Government or any Political Party.</p>
 		</Modal>
 	);
 }
