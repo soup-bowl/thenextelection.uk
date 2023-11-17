@@ -26,7 +26,7 @@ export const Modal = ({ open, onClose, children }: ModalProps) => {
 	if (open) {
 		document.body.style.overflow = 'hidden';
 		return (
-			<div id="modal" className="modal-control">
+			<div id="modal" className="modal">
 				<div className="modal-backdrop" />
 				<div className="modal-background">
 					<div id="modalbox" className="modal-box" style={{ maxWidth: '1200px' }}>

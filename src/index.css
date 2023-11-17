@@ -39,13 +39,13 @@ body {
 	font-weight: bold;
 }
 
-.modal-control {
+.modal {
 	position: fixed;
 	z-index: 1300;
 	inset: 0;
 }
 
-.modal-backdrop {
+.modal .modal-backdrop {
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -55,7 +55,7 @@ body {
 	z-index: -1;
 }
 
-.modal-background {
+.modal .modal-background {
 	height: 100%;
 	outline: 0;
 	display: flex;
@@ -63,7 +63,7 @@ body {
 	align-items: center;
 }
 
-.modal-box {
+.modal .modal-background .modal-box {
 	background-color: #FFF;
 	font-family: 'Inter, sans-serif';
 	margin: 32px;
@@ -76,14 +76,14 @@ body {
 	min-width: 200px;
 	border-radius: 5px;
 	box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px,
-		rgb(0 0 0 / 14%) 0px 24px 38px 3px,
-		rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+				rgb(0 0 0 / 14%) 0px 24px 38px 3px,
+				rgb(0 0 0 / 12%) 0px 9px 46px 8px;
 	border-top-style: solid;
 	border-top-width: 20px;
 	border-top-color: black;
 }
 
-.modal-body {
+.modal .modal-background .modal-box .modal-body {
 	padding: 16px 24px;
 	flex: 1 1 auto;
 	overflow-y: auto;
@@ -96,12 +96,12 @@ body {
 	border-top-color: #1D70B8;
 }
 
-.modal-body a {
+.modal .modal-background .modal-box .modal-body a {
 	color: #1D70B8;
 	text-decoration-thickness: max(1px, 0.0625rem);
 }
 
-.modal-body a:hover {
+.modal .modal-background .modal-box .modal-body a:hover {
 	color: #003078;
 	text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
 }
