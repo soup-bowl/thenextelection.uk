@@ -8,6 +8,7 @@ interface Props {
 export const InfoModal = ({ open, onClose }: Props) => {
 	const date = new Date(import.meta.env.VITE_ELECTION_DATE ?? '');
 	const reason = Number(import.meta.env.VITE_ELECTION_REASON ?? '0');
+	const isElectionTime: boolean = import.meta.env.VITE_ELECTION === '1';
 
 	const electionReason = () => {
 		switch (reason) {
@@ -30,10 +31,16 @@ export const InfoModal = ({ open, onClose }: Props) => {
 				</a></strong> and the code is <strong><a href="https://github.com/soup-bowl/thenextelection.uk">Open Source</a></strong>.
 			</p>
 			<h2>When exactly is the next election?</h2>
+			{!isElectionTime ?
 			<p>
 				The current estimates place the next election at <strong>{date.toLocaleString('default', { month: 'long' })} {date.getFullYear()}</strong>.
 				The reason for this is <strong>{electionReason()}</strong>.
 			</p>
+			:
+			<p>
+				Either an election is <strong>ongoing</strong>, or <a href="https://www.instituteforgovernment.org.uk/explainer/dissolution-parliament">parliament has been <strong>dissolved</strong></a> ahead of one.
+				The information will be updated once an elected government is formed.
+			</p>}
 			<h2>What is the source of the next election date?</h2>
 			<p>
 				The <strong>General Election countdown</strong> information is a rough figure based on information
