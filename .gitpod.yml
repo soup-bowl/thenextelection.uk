@@ -1,12 +1,12 @@
 tasks:
   - name: Frontend
     init: |
-      nvm install 18
-      npm install
+      nvm install 20
+      npm ci
     command: |
       echo "PUBLIC_URL=$(gp url 3000)" > .env.development.local
       cp .env.development.local .env.production.local
-      nvm use 18
+      nvm use 20
       npm start
     openMode: split-right
 
