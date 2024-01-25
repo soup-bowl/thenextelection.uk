@@ -1,4 +1,5 @@
 export enum Party {
+	None,
 	Conservative,
 	Labour,
 	LiberalDemocrats,
@@ -13,6 +14,9 @@ interface HSL {
 export const PartyColour = (party: Party):string => {
 	let hsl = {} as HSL;
 	switch (party) {
+		case Party.None:
+			hsl = {h: 0, s: 0, l: 60};
+			break;
 		case Party.Conservative:
 			hsl = {h: 236, s: 100, l: 25};
 			break;
