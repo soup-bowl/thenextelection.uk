@@ -13,7 +13,7 @@ const Main = ({ children }: Props) => {
 				backgroundImage: 'url("./background.svg")',
 				backgroundPosition: 'center',
 				backgroundSize: 'cover',
-				backgroundColor: PartyColour(Party.Conservative),
+				backgroundColor: PartyColour(parseInt(import.meta.env.VITE_GOVERNMENT) ?? Party.None),
 				minHeight: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
