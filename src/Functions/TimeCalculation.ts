@@ -7,7 +7,12 @@ export interface ITimeCalculation {
 	seconds: number;
 }
 
-export const calculateCountdown = (targetDate : Date) : ITimeCalculation => {
+/**
+ * Calculates the time remaining until a specified target date.
+ * @param targetDate The target date to which the countdown is calculated.
+ * @returns An ITimeCalculation object containing the calc object of time remaining until the target date.
+ */
+export const calculateCountdown = (targetDate: Date): ITimeCalculation => {
 	const now = new Date();
 
 	// calculate differences in years, months, and days
