@@ -1,27 +1,14 @@
 import { Modal } from "../Components/Modal";
 
 interface Props {
+	ElectionDate?: Date;
+	Reason?: string;
+	IsElection?: boolean;
 	open: boolean;
 	onClose: () => void;
 }
 
-export const InfoModal = ({ open, onClose }: Props) => {
-	const date = new Date(import.meta.env.VITE_ELECTION_DATE ?? '');
-	const reason = Number(import.meta.env.VITE_ELECTION_REASON ?? '0');
-	const isElectionTime: boolean = import.meta.env.VITE_ELECTION === '1';
-
-	const electionReason = () => {
-		switch (reason) {
-			default:
-			case 0:
-				return "unknown";
-			case 1:
-				return "the end of the Political term";
-			case 2:
-				return "the incumbent Prime Minister called a General Election";
-		}
-	}
-
+export const InfoModal = ({ ElectionDate = undefined, Reason = '', IsElection = false, open, onClose }: Props) => {
 	return (
 		<Modal open={open} onClose={onClose}>
 			<h2>About the Site</h2>
@@ -31,10 +18,10 @@ export const InfoModal = ({ open, onClose }: Props) => {
 				</a></strong> and the code is <strong><a href="https://github.com/soup-bowl/thenextelection.uk">Open Source</a></strong>.
 			</p>
 			<h2>When exactly is the next election?</h2>
-			{!isElectionTime ?
+			{!IsElection ?
 			<p>
-				The current estimates place the next election at <strong>{date.toLocaleString('default', { month: 'long' })} {date.getFullYear()}</strong>.
-				The reason for this is <strong>{electionReason()}</strong>.
+				The current estimates place the next election at {ElectionDate !== undefined && <strong>{ElectionDate.toLocaleString('default', { month: 'long' })} {ElectionDate.getFullYear()}</strong>}.
+				The reason for this is <strong>{Reason}</strong>.
 			</p>
 			:
 			<p>

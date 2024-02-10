@@ -9,11 +9,17 @@ export interface IElectionData {
 		parties: {
 			name: string;
 			abbr: string;
-			color: { h: number, s: number, l: number };
+			color: IColour;
 		}[];
 		reasons: {
 			key: string;
 			message: string;
 		}[];
 	};
+}
+
+export interface IColour {
+	h: number;
+	s: number;
+	l: number;
 }
