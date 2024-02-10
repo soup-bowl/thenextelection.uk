@@ -19,15 +19,15 @@ export const InfoModal = ({ ElectionDate = undefined, Reason = '', IsElection = 
 			</p>
 			<h2>When exactly is the next election?</h2>
 			{!IsElection ?
-			<p>
-				The current estimates place the next election at {ElectionDate !== undefined && <strong>{ElectionDate.toLocaleString('default', { month: 'long' })} {ElectionDate.getFullYear()}</strong>}.
-				The reason for this is <strong>{Reason}</strong>.
-			</p>
-			:
-			<p>
-				Either an election is <strong>ongoing</strong>, or <a href="https://www.instituteforgovernment.org.uk/explainer/dissolution-parliament">parliament has been <strong>dissolved</strong></a> ahead of one.
-				The information will be updated once an elected government is formed.
-			</p>}
+				<p>
+					The current estimates place the next election at {ElectionDate !== undefined && <strong>{ElectionDate.toLocaleString('default', { month: 'long' })} {ElectionDate.getFullYear()}</strong>}.
+					The reason for this is <strong>{Reason}</strong>.
+				</p>
+				:
+				<p>
+					Either an election is <strong>ongoing</strong>, or <a href="https://www.instituteforgovernment.org.uk/explainer/dissolution-parliament">parliament has been <strong>dissolved</strong></a> ahead of one.
+					The information will be updated once an elected government is formed.
+				</p>}
 			<h2>What is the source of the next election date?</h2>
 			<p>
 				The <strong>General Election countdown</strong> information is a rough figure based on information
