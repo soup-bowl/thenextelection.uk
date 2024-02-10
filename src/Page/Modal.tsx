@@ -1,4 +1,4 @@
-import { Modal } from "../Components/Modal";
+import { Modal } from "../Components";
 
 interface Props {
 	ElectionDate?: Date;

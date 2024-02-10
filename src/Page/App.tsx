@@ -1,9 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { ReactNode } from "preact/compat";
-import Countdown from "../Components/Countdown";
-import Main from "../Components/MainStyle";
-import { calculateCountdown, ITimeCalculation } from "../Functions/TimeCalculation";
-import useInterval from "../Functions/useInterval";
+import { Countdown, Main } from "../Components";
+import { ITimeCalculation, calculateCountdown, useInterval } from "../Functions";
 import { InfoModal } from "./Modal";
 import { IColour, IElectionData } from "../interface";
 import yaml from 'yaml';
