@@ -1,0 +1,21 @@
+data:
+  date: 2025-01-28
+  reason: NORMAL
+  party: Conservatives
+
+config:
+  parties:
+    - name: Conservatives
+      abbr: CON
+      color: { h: 236, s: 100, l: 25 }
+    - name: Labour
+      abbr: LAB
+      color: { h: 344, s: 100, l: 45 }
+    - name: Liberal Democrats
+      abbr: LD
+      color: { h: 38, s: 96, l: 54 }
+  reasons:
+    - key: NORMAL
+      message: the end of the Political term
+    - key: CALLED
+      message: the incumbent Prime Minister called for a General Election

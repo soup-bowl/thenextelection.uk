@@ -5,7 +5,6 @@ tasks:
       npm ci
     command: |
       echo "PUBLIC_URL=$(gp url 3000)" > .env.development.local
-      cp .env.development.local .env.production.local
       nvm use 20
       npm start
     openMode: split-right
