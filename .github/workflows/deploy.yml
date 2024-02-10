@@ -20,6 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set Signature
+        run: echo "VITE_VER=$(git rev-parse --short HEAD)" >> .env
+
       - name: 🏗 Setup Node.js
         uses: actions/setup-node@v4
         with:

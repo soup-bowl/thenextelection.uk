@@ -44,7 +44,9 @@ export const InfoModal = ({ ElectionDate = undefined, Reason = '', IsElection = 
 			<p style={{
 				color: '#818181',
 				textAlign: 'center',
-			}}>This website is not affiliated with the UK Government or any Political Party.</p>
+			}}>
+				Version {import.meta.env.VITE_VER ?? 'Unknown'} - This website is not affiliated with the UK Government or any Political Party.
+			</p>
 		</Modal>
 	);
 }
