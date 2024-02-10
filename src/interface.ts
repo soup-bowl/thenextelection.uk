@@ -3,6 +3,7 @@ export interface IElectionData {
 		date: string;
 		reason: string;
 		party: string;
+		election: boolean;
 	};
 	config: {
 		parties: {
