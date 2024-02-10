@@ -1,7 +1,7 @@
 data:
   date: 2025-01-28
   reason: NORMAL
-  party: Conservatives
+  party: CON
   election: false
 
 config:
