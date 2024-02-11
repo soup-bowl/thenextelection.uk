@@ -28,7 +28,7 @@ const App = () => {
 	const [colour, setColour] = useState<string>(hslToString({ h: 0, s: 0, l: 60 }));
 
 	useEffect(() => {
-		fetch(`https://raw.githubusercontent.com/soup-bowl/thenextelection.uk/main/election.yml`)
+		fetch(import.meta.env.VITE_SOURCE)
 			.then(response => response.text())
 			.then(yamlText => yaml.parse(yamlText))
 			.then((data: IElectionData) => {
