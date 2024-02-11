@@ -4,10 +4,8 @@ tasks:
       nvm install 20
       npm ci
     command: |
-      echo "PUBLIC_URL=$(gp url 3000)" > .env.development.local
       nvm use 20
       npm start
-    openMode: split-right
 
 ports:
   - port: 3000
