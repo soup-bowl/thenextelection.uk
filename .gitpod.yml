@@ -1,9 +1,12 @@
 tasks:
+  - name: Election Resource
+    command: npx --yes serve -n -C -p 3005 ${GITPOD_REPO_ROOT} 
   - name: Frontend
     init: |
       nvm install 20
       npm ci
     command: |
+      echo "VITE_SOURCE=https://3005-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}/election.yml" > .env.development.local
       nvm use 20
       npm start
 
@@ -13,4 +16,7 @@ ports:
     description: Access the React PWA app.
     visibility: public
     onOpen: open-browser
+  - port: 3005
+    name: Resource
+    visibility: public
 
