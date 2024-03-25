@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@fontsource/eb-garamond": "^5.0.17",
     "@fontsource/inter": "^5.0.17",
