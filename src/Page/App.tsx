@@ -25,7 +25,7 @@ const App = () => {
 	const [dialog, setDialogState] = useState<boolean>(false);
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
 	const [electionData, setElectionData] = useState<IElectionData | undefined>(undefined);
-	const [colour, setColour] = useState<string>(hslToString({ h: 0, s: 0, l: 60 }));
+	const [colour, setColour] = useState<string[]>([hslToString({ h: 0, s: 0, l: 60 })]);
 
 	useEffect(() => {
 		fetch(import.meta.env.VITE_SOURCE)
@@ -34,7 +34,12 @@ const App = () => {
 			.then((data: IElectionData) => {
 				console.log("Data", data);
 				setElectionData(data);
-				setColour(hslToString(data.config.parties.find(p => p.abbr === data.data.party)!.color));
+
+				let partyColours: string[] = [];
+				data.data.party.forEach(p => {
+					partyColours.push(hslToString(data.config.parties.find(q => q.abbr === p)!.color))
+				});
+				setColour(partyColours);
 			})
 	}, []);
 

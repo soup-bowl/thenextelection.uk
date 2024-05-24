@@ -1,7 +1,8 @@
 data:
   date: 2024-07-04
   reason: CALLED
-  party: CON
+  party:
+    - CON
   election: false
 
 config:
