@@ -13,8 +13,8 @@ export const InfoModal = ({ ElectionDate = undefined, Reason = '', IsElection = 
 		<Modal open={open} onClose={onClose}>
 			<h2>About the Site</h2>
 			<p>
-				<strong>The Next Election UK</strong> just provides a simple, quick countdown to the next UK General
-				Election. The website was made by <strong><a href="https://github.com/soup-bowl">soup-bowl
+				<strong>The Next Election UK</strong> provides a simple, quick countdown to the next UK General Election.
+				The website was made by <strong><a href="https://github.com/soup-bowl" style={{ whiteSpace: 'nowrap' }}>soup-bowl
 				</a></strong> and the code is <strong><a href="https://github.com/soup-bowl/thenextelection.uk">Open Source</a></strong>.
 			</p>
 			<h2>When exactly is the next election?</h2>

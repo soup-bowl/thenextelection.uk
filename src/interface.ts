@@ -10,6 +10,7 @@ export interface IElectionData {
 			name: string;
 			abbr: string;
 			color: IColour;
+			leader: string;
 		}[];
 		reasons: {
 			key: string;

@@ -6,11 +6,6 @@ import { InfoModal } from "./Modal";
 import { IColour, IElectionData } from "../interface";
 import yaml from 'yaml';
 
-const hslToString = (colour: IColour) => {
-	colour.l = colour.l - (colour.l / 2) - 5;
-	return `hsl(${colour.h},${colour.s}%,${colour.l}%)`;
-};
-
 const Label = ({ Size, NoMargin = false, children }:
 	{ Size: number, NoMargin?: boolean, children: ReactNode }
 ) => {
@@ -25,7 +20,7 @@ const App = () => {
 	const [dialog, setDialogState] = useState<boolean>(false);
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined);
 	const [electionData, setElectionData] = useState<IElectionData | undefined>(undefined);
-	const [colour, setColour] = useState<string[]>([hslToString({ h: 0, s: 0, l: 60 })]);
+	const [colour, setColour] = useState<IColour[]>([]);
 
 	useEffect(() => {
 		fetch(import.meta.env.VITE_SOURCE)
@@ -35,9 +30,9 @@ const App = () => {
 				console.log("Data", data);
 				setElectionData(data);
 
-				let partyColours: string[] = [];
+				let partyColours: IColour[] = [];
 				data.data.party.forEach(p => {
-					partyColours.push(hslToString(data.config.parties.find(q => q.abbr === p)!.color))
+					partyColours.push(data.config.parties.find(q => q.abbr === p)!.color)
 				});
 				setColour(partyColours);
 			})

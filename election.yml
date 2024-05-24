@@ -10,12 +10,15 @@ config:
     - name: Conservatives
       abbr: CON
       color: { h: 236, s: 100, l: 25 }
+      leader: Rishi Sunak
     - name: Labour
       abbr: LAB
       color: { h: 344, s: 100, l: 45 }
+      leader:	Sir Keir Starmer
     - name: Liberal Democrats
       abbr: LD
       color: { h: 38, s: 96, l: 54 }
+      leader: Sir Ed Davey
   reasons:
     - key: NORMAL
       message: the end of the Political term
