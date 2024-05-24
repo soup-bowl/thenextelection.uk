@@ -1,15 +1,15 @@
-import { ReactNode, useEffect } from "preact/compat";
-import "@fontsource/inter";
+import { ReactNode, useEffect } from "preact/compat"
+import "@fontsource/inter"
 
 interface ModalProps {
-	open?: boolean;
-	onClose: () => void;
-	children: ReactNode;
+	open?: boolean
+	onClose: () => void
+	children: ReactNode
 }
 
 const onCloseInteraction = (onClose: () => void) => {
-	document.body.style.overflow = 'visible';
-	onClose();
+	document.body.style.overflow = "visible"
+	onClose()
 }
 
 export const Modal = ({ open, onClose, children }: ModalProps) => {
@@ -17,27 +17,25 @@ export const Modal = ({ open, onClose, children }: ModalProps) => {
 		document.getElementById("modal")?.addEventListener("click", (e) => {
 			if (e.target instanceof HTMLElement) {
 				if (!e.target.closest("#modalbox")) {
-					onCloseInteraction(onClose);
+					onCloseInteraction(onClose)
 				}
 			}
-		});
-	}, [onClose]);
+		})
+	}, [onClose])
 
 	if (open) {
-		document.body.style.overflow = 'hidden';
+		document.body.style.overflow = "hidden"
 		return (
 			<div id="modal" className="modal">
 				<div className="modal-backdrop" />
 				<div className="modal-background">
-					<div id="modalbox" className="modal-box" style={{ maxWidth: '1200px' }}>
-						<div className="modal-body">
-							{children}
-						</div>
+					<div id="modalbox" className="modal-box" style={{ maxWidth: "1200px" }}>
+						<div className="modal-body">{children}</div>
 					</div>
 				</div>
 			</div>
-		);
+		)
 	} else {
-		return (<></>);
+		return <></>
 	}
 }

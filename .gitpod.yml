@@ -1,6 +1,6 @@
 tasks:
   - name: Election Resource
-    command: npx --yes serve -n -C -p 3005 ${GITPOD_REPO_ROOT} 
+    command: npx --yes serve -n -C -p 3005 ${GITPOD_REPO_ROOT}
   - name: Frontend
     init: |
       nvm install 20
@@ -19,4 +19,3 @@ ports:
   - port: 3005
     name: Resource
     visibility: public
-

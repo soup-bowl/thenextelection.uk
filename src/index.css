@@ -64,8 +64,8 @@ body {
 }
 
 .modal .modal-background .modal-box {
-	background-color: #FFF;
-	font-family: 'Inter, sans-serif';
+	background-color: #fff;
+	font-family: "Inter, sans-serif";
 	margin: 32px;
 	position: relative;
 	overflow-y: auto;
@@ -75,9 +75,10 @@ body {
 	max-height: calc(100% - 64px);
 	min-width: 200px;
 	border-radius: 5px;
-	box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px,
-				rgb(0 0 0 / 14%) 0px 24px 38px 3px,
-				rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+	box-shadow:
+		rgb(0 0 0 / 20%) 0px 11px 15px -7px,
+		rgb(0 0 0 / 14%) 0px 24px 38px 3px,
+		rgb(0 0 0 / 12%) 0px 9px 46px 8px;
 	border-top-style: solid;
 	border-top-width: 20px;
 	border-top-color: black;
@@ -90,14 +91,14 @@ body {
 	font-size: 1.25rem;
 	font-family: sans-serif;
 	text-align: left;
-	color: #0B0C0C;
+	color: #0b0c0c;
 	border-top-style: solid;
 	border-top-width: 5px;
-	border-top-color: #1D70B8;
+	border-top-color: #1d70b8;
 }
 
 .modal .modal-background .modal-box .modal-body a {
-	color: #1D70B8;
+	color: #1d70b8;
 	text-decoration-thickness: max(1px, 0.0625rem);
 }
 
