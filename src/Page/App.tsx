@@ -32,7 +32,7 @@ const App = () => {
 
 				let partyColours: IColour[] = [];
 				data.data.party.forEach(p => {
-					partyColours.push(data.config.parties.find(q => q.abbr === p)!.color)
+					partyColours.push(data.config.parties[p].color)
 				});
 				setColour(partyColours);
 			})
@@ -60,7 +60,7 @@ const App = () => {
 					<a className="main-link" onClick={() => setDialogState(true)}>More info</a>
 					<InfoModal
 						ElectionDate={new Date(electionData.data.date)}
-						Reason={electionData.config.reasons.find(p => p.key === electionData.data.reason)?.message}
+						Reason={electionData.config.reasons[electionData.data.reason]}
 						IsElection={electionData.data.election}
 						open={dialog}
 						onClose={() => setDialogState(false)}

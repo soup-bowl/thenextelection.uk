@@ -7,15 +7,16 @@ export interface IElectionData {
 	};
 	config: {
 		parties: {
-			name: string;
-			abbr: string;
-			color: IColour;
-			leader: string;
-		}[];
+			[key: string]: {
+				name: string;
+				abbr: string;
+				color: IColour;
+				leader: string;
+			}
+		};
 		reasons: {
-			key: string;
-			message: string;
-		}[];
+			[key: string]: string;
+		};
 	};
 }
 

@@ -1,26 +1,24 @@
 data:
-  date: 2024-07-04
-  reason: CALLED
+  election: false
   party:
     - CON
-  election: false
+  date: 2024-07-04
+  reason: CALLED
 
 config:
   parties:
-    - name: Conservatives
-      abbr: CON
-      color: { h: 236, s: 100, l: 25 }
+    CON:
+      name: Conservatives
       leader: Rishi Sunak
-    - name: Labour
-      abbr: LAB
+      color: { h: 236, s: 100, l: 25 }
+    LAB:
+      name: Labour
+      leader: Sir Keir Starmer
       color: { h: 344, s: 100, l: 45 }
-      leader:	Sir Keir Starmer
-    - name: Liberal Democrats
-      abbr: LD
-      color: { h: 38, s: 96, l: 54 }
+    LD:
+      name: Liberal Democrats
       leader: Sir Ed Davey
+      color: { h: 38, s: 96, l: 54 }
   reasons:
-    - key: NORMAL
-      message: the end of the Political term
-    - key: CALLED
-      message: the incumbent Prime Minister called for a General Election
+    NORMAL: the end of the Political term
+    CALLED: the incumbent Prime Minister called for a General Election
