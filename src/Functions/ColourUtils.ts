@@ -1,4 +1,4 @@
-import { IColour } from "../interface";
+import { IColour } from "@/interface";
 
 export const neutralColour: IColour = { h: 0, s: 0, l: 25 }
 

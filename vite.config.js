@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import preact from '@preact/preset-vite';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -31,5 +32,10 @@ export default defineConfig({
 	server: {
 		host: true,
 		port: 3000
+	},
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, './src'),
+		},
 	},
 })

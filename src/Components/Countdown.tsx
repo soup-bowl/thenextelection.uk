@@ -1,4 +1,4 @@
-import { ITimeCalculation } from "../Functions/TimeCalculation";
+import { ITimeCalculation } from "@/Functions/TimeCalculation";
 
 interface Props {
 	counter?: ITimeCalculation;

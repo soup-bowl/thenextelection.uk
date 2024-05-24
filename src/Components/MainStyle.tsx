@@ -1,7 +1,7 @@
 import { ReactNode, useMemo } from "preact/compat";
 import "@fontsource/eb-garamond";
-import { darkenColour, hslArrayToGradient, hslToString, neutralColour } from "../Functions";
-import { IColour } from "../interface";
+import { darkenColour, hslArrayToGradient, hslToString, neutralColour } from "@/Functions";
+import { IColour } from "@/interface";
 
 interface Props {
 	Colour: IColour[];

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "preact/hooks";
 import { ReactNode } from "preact/compat";
-import { Countdown, Main } from "../Components";
-import { ITimeCalculation, calculateCountdown, useInterval } from "../Functions";
-import { InfoModal } from "./Modal";
-import { IColour, IElectionData } from "../interface";
+import { Countdown, Main } from "@/Components";
+import { ITimeCalculation, calculateCountdown, useInterval } from "@/Functions";
+import { InfoModal } from "@/Page/Modal";
+import { IColour, IElectionData } from "@/interface";
 import yaml from 'yaml';
 
 const Label = ({ Size, NoMargin = false, children }:
