@@ -3,8 +3,7 @@ import { ColorTranslator } from "colortranslator"
 const neutralColour = new ColorTranslator("#404040")
 
 const darkenColour = (colour: ColorTranslator): ColorTranslator => {
-	const hsl = colour.HSLObject
-	const newL = hsl.L - hsl.L / 2 - 5
+	const newL = colour.L - colour.L / 2 - 5
 	const adjustedL = Math.max(0, Math.min(100, newL))
 	return colour.setL(adjustedL)
 }

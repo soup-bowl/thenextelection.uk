@@ -47,7 +47,7 @@ const App = () => {
 	}, 1000)
 
 	return (
-		<Main Colour={colour}>
+		<Main Colour={electionData !== undefined && !electionData.data.election ? colour : []}>
 			{electionData !== undefined ? (
 				<>
 					{!electionData.data.election ? (
