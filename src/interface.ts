@@ -10,7 +10,7 @@ export interface IElectionData {
 			[key: string]: {
 				name: string
 				abbr: string
-				color: IColour
+				color: string
 				leader: string
 			}
 		}
@@ -18,10 +18,4 @@ export interface IElectionData {
 			[key: string]: string
 		}
 	}
-}
-
-export interface IColour {
-	h: number
-	s: number
-	l: number
 }

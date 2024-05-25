@@ -1,21 +1,32 @@
-import { IColour } from "@/interface"
+import { ColorTranslator } from "colortranslator"
 
-export const neutralColour: IColour = { h: 0, s: 0, l: 25 }
+const neutralColour = new ColorTranslator("#404040")
 
-export const hslToString = (colour: IColour): string => {
-	return `hsl(${colour.h},${colour.s}%,${colour.l}%)`
+const darkenColour = (colour: ColorTranslator): ColorTranslator => {
+	const hsl = colour.HSLObject
+	const newL = hsl.L - hsl.L / 2 - 5
+	const adjustedL = Math.max(0, Math.min(100, newL))
+	return colour.setL(adjustedL)
 }
 
-export const darkenColour = (colour: IColour): IColour => {
-	colour.l = colour.l - colour.l / 2 - 5
-	return colour
-}
-
-export const hslArrayToGradient = (colours: IColour[]): string => {
+const colourToGradient = (colours: ColorTranslator[]): string => {
 	return `linear-gradient(90deg, ${colours
-		.map((color, index) => {
+		.map((colour, index) => {
 			const percentage = (index / (colours.length - 1)) * 100
-			return `${hslToString(color)} ${percentage}%`
+			return `${colour.HEX} ${percentage}%`
 		})
 		.join(", ")})`
 }
+
+const backgroundColourGenerator = (colours: string[]): string => {
+	if (colours.length === 0) {
+		return neutralColour.HEX
+	} else if (colours.length > 1) {
+		const cols = colours.map((c) => darkenColour(new ColorTranslator(c)))
+		return colourToGradient(cols)
+	} else {
+		return darkenColour(new ColorTranslator(colours[0])).HEX
+	}
+}
+
+export default backgroundColourGenerator

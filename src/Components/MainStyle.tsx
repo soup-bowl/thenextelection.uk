@@ -1,23 +1,14 @@
 import { ReactNode, useMemo } from "preact/compat"
 import "@fontsource/eb-garamond"
-import { darkenColour, hslArrayToGradient, hslToString, neutralColour } from "@/Functions"
-import { IColour } from "@/interface"
+import { backgroundColourGenerator } from "@/Functions"
 
 interface Props {
-	Colour: IColour[]
+	Colour: string[]
 	children: ReactNode
 }
 
 const Main = ({ Colour, children }: Props) => {
-	const backgroundColour = useMemo(() => {
-		if (Colour.length === 0) {
-			return hslToString(neutralColour)
-		} else if (Colour.length > 1) {
-			return hslArrayToGradient(Colour.map((c) => darkenColour(c)))
-		} else {
-			return hslToString(darkenColour(Colour[0]))
-		}
-	}, [Colour])
+	const backgroundColour = useMemo(() => backgroundColourGenerator(Colour), [Colour])
 
 	return (
 		<div style={{ textAlign: "center", background: backgroundColour }}>

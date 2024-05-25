@@ -10,15 +10,15 @@ config:
     CON:
       name: Conservatives
       leader: Rishi Sunak
-      color: { h: 236, s: 100, l: 25 }
+      color: "#0087DC"
     LAB:
       name: Labour
       leader: Sir Keir Starmer
-      color: { h: 344, s: 100, l: 45 }
+      color: "#E4003B"
     LD:
       name: Liberal Democrats
       leader: Sir Ed Davey
-      color: { h: 38, s: 96, l: 54 }
+      color: "#FAA61A"
   reasons:
     NORMAL: the end of the Political term
     CALLED: the incumbent Prime Minister called for a General Election

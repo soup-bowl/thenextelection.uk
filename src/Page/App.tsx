@@ -3,7 +3,7 @@ import { ReactNode } from "preact/compat"
 import { Countdown, Main } from "@/Components"
 import { ITimeCalculation, calculateCountdown, useInterval } from "@/Functions"
 import { InfoModal } from "@/Page/Modal"
-import { IColour, IElectionData } from "@/interface"
+import { IElectionData } from "@/interface"
 import yaml from "yaml"
 
 const Label = ({ Size, NoMargin = false, children }: { Size: number; NoMargin?: boolean; children: ReactNode }) => {
@@ -24,7 +24,7 @@ const App = () => {
 	const [dialog, setDialogState] = useState<boolean>(false)
 	const [countdownTime, setCountdownTime] = useState<ITimeCalculation | undefined>(undefined)
 	const [electionData, setElectionData] = useState<IElectionData | undefined>(undefined)
-	const [colour, setColour] = useState<IColour[]>([])
+	const [colour, setColour] = useState<string[]>([])
 
 	useEffect(() => {
 		fetch(import.meta.env.VITE_SOURCE)
@@ -34,10 +34,8 @@ const App = () => {
 				console.log("Data", data)
 				setElectionData(data)
 
-				const partyColours: IColour[] = []
-				data.data.party.forEach((p) => {
-					partyColours.push(data.config.parties[p].color)
-				})
+				const partyColours: string[] = []
+				data.data.party.forEach((p) => partyColours.push(data.config.parties[p].color))
 				setColour(partyColours)
 			})
 	}, [])
