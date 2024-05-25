@@ -34,7 +34,7 @@ const App = () => {
 				console.log("Data", data)
 				setElectionData(data)
 
-				let partyColours: IColour[] = []
+				const partyColours: IColour[] = []
 				data.data.party.forEach((p) => {
 					partyColours.push(data.config.parties[p].color)
 				})
