@@ -13,7 +13,7 @@ const Main = ({ Colour, children }: Props) => {
 		if (Colour.length === 0) {
 			return hslToString(neutralColour)
 		} else if (Colour.length > 1) {
-			return hslArrayToGradient(Colour)
+			return hslArrayToGradient(Colour.map((c) => darkenColour(c)))
 		} else {
 			return hslToString(darkenColour(Colour[0]))
 		}

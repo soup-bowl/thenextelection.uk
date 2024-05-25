@@ -15,7 +15,7 @@ export const hslArrayToGradient = (colours: IColour[]): string => {
 	return `linear-gradient(90deg, ${colours
 		.map((color, index) => {
 			const percentage = (index / (colours.length - 1)) * 100
-			return `${hslToString(darkenColour(color))} ${percentage}%`
+			return `${hslToString(color)} ${percentage}%`
 		})
 		.join(", ")})`
 }
