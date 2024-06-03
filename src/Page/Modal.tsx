@@ -60,6 +60,11 @@ export const InfoModal = ({ ElectionDate = undefined, Reason = "", IsElection = 
 				You can find information about your local council votes and how to register to vote on the UK Government{" "}
 				<a href="https://www.gov.uk/how-to-vote">Register to Vote</a> page.
 			</p>
+			<h2>Can I embed this Countdown?</h2>
+			<p>You can! You can use this anywhere that supports HTML IFrames:</p>
+			<pre style={{ backgroundColor: "#d0d0d0", padding: 10, borderRadius: 5 }}>
+				{'<iframe src="https://thenextelection.uk/" width="800" height="600"></iframe>'}
+			</pre>
 			<p
 				style={{
 					color: "#818181",
