@@ -15,18 +15,24 @@ const Countdown = ({ counter = undefined }: Props) => {
 
 	return (
 		<div className="countdown-box">
-			<div className="counter">
-				<span>Years</span>
-				<span className="digit">{counter.years.toString().padStart(2, "0")}</span>
-			</div>
-			<div className="counter">
-				<span>Months</span>
-				<span className="digit">{counter.months.toString().padStart(2, "0")}</span>
-			</div>
-			<div className="counter">
-				<span>Days</span>
-				<span className="digit">{counter.days.toString().padStart(2, "0")}</span>
-			</div>
+			{counter.years > 0 && (
+				<div className="counter">
+					<span>Years</span>
+					<span className="digit">{counter.years.toString().padStart(2, "0")}</span>
+				</div>
+			)}
+			{counter.months > 0 && (
+				<div className="counter">
+					<span>Months</span>
+					<span className="digit">{counter.months.toString().padStart(2, "0")}</span>
+				</div>
+			)}
+			{counter.days > 0 && (
+				<div className="counter">
+					<span>Days</span>
+					<span className="digit">{counter.days.toString().padStart(2, "0")}</span>
+				</div>
+			)}
 			<div className="counter">
 				<span>Hours</span>
 				<span className="digit">{counter.hours.toString().padStart(2, "0")}</span>
