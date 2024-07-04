@@ -1,5 +1,5 @@
 data:
-  election: false
+  election: true
   party:
     - CON
   date: 2024-07-04
