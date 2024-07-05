@@ -1,8 +1,8 @@
 data:
-  election: true
+  election: false
   party:
-    - CON
-  date: 2024-07-04
+    - LAB
+  date: 2029-08-25
   reason: CALLED
 
 config:
