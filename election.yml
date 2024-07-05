@@ -3,7 +3,7 @@ data:
   party:
     - LAB
   date: 2029-08-25
-  reason: CALLED
+  reason: NORMAL
 
 config:
   parties:
