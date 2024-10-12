@@ -60,9 +60,9 @@ const App = () => {
 					) : (
 						<Label Size={1.5}>An election is ongoing</Label>
 					)}
-					<a className="main-link" onClick={() => setDialogState(true)}>
+					<button className="main-link" onClick={() => setDialogState(true)}>
 						More info
-					</a>
+					</button>
 					<InfoModal
 						ElectionDate={new Date(electionData.data.date)}
 						Reason={electionData.config.reasons[electionData.data.reason]}
