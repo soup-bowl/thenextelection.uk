@@ -1,24 +1,9 @@
 import { useEffect, useState } from "preact/hooks"
-import { ReactNode } from "preact/compat"
-import { Countdown, Main } from "@/Components"
+import { Countdown, Label, Main } from "@/Components"
 import { ITimeCalculation, calculateCountdown, useInterval } from "@/Functions"
 import { InfoModal } from "@/Page/Modal"
 import { IElectionData } from "@/interface"
 import yaml from "yaml"
-
-const Label = ({ Size, NoMargin = false, children }: { Size: number; NoMargin?: boolean; children: ReactNode }) => {
-	return (
-		<p
-			style={{
-				margin: NoMargin ? 0 : 10,
-				fontSize: `${Size}em`,
-				textShadow: "0px 0px 10px black",
-			}}
-		>
-			{children}
-		</p>
-	)
-}
 
 const App = () => {
 	const [dialog, setDialogState] = useState<boolean>(false)

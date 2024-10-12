@@ -3,6 +3,20 @@ body {
 	font-family: serif;
 }
 
+.main {
+	background-image: url("./background.svg");
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	font-family: "EB Garamond", serif;
+	color: white;
+}
+
 .main-link {
 	color: white;
 	margin: 0;

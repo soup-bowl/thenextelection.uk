@@ -12,23 +12,7 @@ const Main = ({ Colour, children }: Props) => {
 
 	return (
 		<div style={{ textAlign: "center", background: backgroundColour }}>
-			<header
-				style={{
-					backgroundImage: 'url("./background.svg")',
-					backgroundPosition: "center",
-					backgroundSize: "cover",
-					minHeight: "100vh",
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-					justifyContent: "center",
-					fontSize: "2rem",
-					fontFamily: '"EB Garamond", serif',
-					color: "white",
-				}}
-			>
-				{children}
-			</header>
+			<header className="main">{children}</header>
 		</div>
 	)
 }
