@@ -1,6 +1,14 @@
-import { ReactNode } from "preact/compat"
+import { ComponentChildren } from "preact"
 
-const Label = ({ Size, NoMargin = false, children }: { Size: number; NoMargin?: boolean; children: ReactNode }) => {
+const Label = ({
+	Size,
+	NoMargin = false,
+	children,
+}: {
+	Size: number
+	NoMargin?: boolean
+	children: ComponentChildren
+}) => {
 	return (
 		<p
 			style={{

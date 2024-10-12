@@ -1,10 +1,11 @@
-import { ReactNode, useEffect } from "preact/compat"
+import { ComponentChildren } from "preact"
+import { useEffect } from "preact/hooks"
 import "@fontsource/inter"
 
 interface ModalProps {
 	open?: boolean
 	onClose: () => void
-	children: ReactNode
+	children: ComponentChildren
 }
 
 const onCloseInteraction = (onClose: () => void) => {

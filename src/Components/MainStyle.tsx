@@ -1,10 +1,11 @@
-import { ReactNode, useMemo } from "preact/compat"
-import "@fontsource/eb-garamond"
+import { ComponentChildren } from "preact"
+import { useMemo } from "preact/hooks"
 import { backgroundColourGenerator } from "@/Functions"
+import "@fontsource/eb-garamond"
 
 interface Props {
 	Colour: string[]
-	children: ReactNode
+	children: ComponentChildren
 }
 
 const Main = ({ Colour, children }: Props) => {
