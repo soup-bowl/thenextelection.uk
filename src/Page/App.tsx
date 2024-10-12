@@ -16,7 +16,6 @@ const App = () => {
 			.then((response) => response.text())
 			.then((yamlText) => yaml.parse(yamlText))
 			.then((data: IElectionData) => {
-				console.log("Data", data)
 				setElectionData(data)
 
 				const partyColours: string[] = []
