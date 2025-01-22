@@ -7,7 +7,7 @@
 		"@fontsource/eb-garamond": "^5.1.1",
 		"@fontsource/inter": "^5.1.0",
 		"preact": "^10.24.3",
-		"vite": "^5.4.10",
+		"vite": "^5.4.14",
 		"yaml": "^2.6.0"
 	},
 	"devDependencies": {
@@ -19,7 +19,7 @@
 		"eslint-plugin-react-refresh": "^0.4.14",
 		"prettier": "^3.2.5",
 		"typescript": "^5.6.3",
-		"vite": "^5.4.10"
+		"vite": "^5.4.14"
 	},
 	"scripts": {
 		"start": "npm run dev",
