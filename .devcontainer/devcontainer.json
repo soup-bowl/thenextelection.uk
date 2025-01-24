@@ -1,0 +1,5 @@
+{
+	"name": "TNE Dev",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"remoteUser": "root"
+}
