@@ -9,7 +9,7 @@ config:
   parties:
     CON:
       name: Conservatives
-      leader: Rishi Sunak
+      leader: Kemi Badenoch
       color: "#0087DC"
     LAB:
       name: Labour
@@ -19,6 +19,19 @@ config:
       name: Liberal Democrats
       leader: Sir Ed Davey
       color: "#FAA61A"
+    REF:
+      name: Reform UK
+      leader: Nigel Farage
+      color: "#12B6CF"
+    SNP:
+      name: Scottish National Party
+      leader: John Swinney
+      color: "#FFF95D"
+    PC:
+      name: Plaid Cymru
+      leader: Rhun ap Iorwerth
+      color: "#3F8428"
   reasons:
     NORMAL: the end of the Political term
     CALLED: the incumbent Prime Minister called for a General Election
+    NO_CONFIDENCE: a vote of no confidence in the incumbent government
