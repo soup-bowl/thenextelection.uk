@@ -6,9 +6,9 @@
 	"dependencies": {
 		"@fontsource/eb-garamond": "^5.2.5",
 		"@fontsource/inter": "^5.2.5",
-		"preact": "^10.26.6",
+		"preact": "^10.26.8",
 		"vite": "^6.3.5",
-		"yaml": "^2.7.1"
+		"yaml": "^2.8.0"
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.10.1",
