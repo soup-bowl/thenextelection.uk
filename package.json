@@ -16,7 +16,7 @@
 		"colortranslator": "^6.0.1",
 		"eslint": "^8.57.1",
 		"eslint-plugin-react-hooks": "^7.0.1",
-		"eslint-plugin-react-refresh": "^0.5.2",
+		"eslint-plugin-react-refresh": "^0.4.26",
 		"prettier": "^3.8.1",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1"
