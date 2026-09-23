@@ -13,7 +13,7 @@ config:
       color: "#0087DC"
     LAB:
       name: Labour
-      leader: Sir Keir Starmer
+      leader: Andy Burnham
       color: "#E4003B"
     LD:
       name: Liberal Democrats
