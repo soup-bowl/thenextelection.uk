@@ -24,8 +24,13 @@ export const Modal = ({ open, onClose, children }: ModalProps) => {
 		})
 	}, [onClose])
 
+	useEffect(() => {
+		if (open) {
+			document.body.style.overflow = "hidden"
+		}
+	}, [open])
+
 	if (open) {
-		document.body.style.overflow = "hidden"
 		return (
 			<div id="modal" className="modal">
 				<div className="modal-backdrop" />

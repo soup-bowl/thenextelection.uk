@@ -12,13 +12,14 @@
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.10.6",
-		"@typescript-eslint/eslint-plugin": "^7.10.0",
+		"@typescript-eslint/eslint-plugin": "^8.72.1",
+		"@typescript-eslint/parser": "^8.72.1",
 		"colortranslator": "^6.1.1",
 		"eslint": "^8.57.1",
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"eslint-plugin-react-refresh": "^0.4.26",
 		"prettier": "^3.9.9",
-		"typescript": "^7.0.2",
+		"typescript": "^6.0.3",
 		"vite": "^8.3.4"
 	},
 	"scripts": {
